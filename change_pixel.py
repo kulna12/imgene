@@ -2,26 +2,17 @@ import os,sys
 import glob
 import cv2
 
-def  change_pixel(folder, width, height):
-    folderLen = len(folder)
-    os.mkdir('resized')
-    try:
-        for img in glob.glob(folder + '/*.png'):
-            imgage =  cv2.imread(img)
+folder = input('Enter Folder Name : ')
+width =  int(input('Width : '))
+height = int(input('Height : '))
+os.mkdir('resized')
+folderLen = len(folder)
+try:
+     for img in glob.glob(folder + '/*.png'):
+            image =  cv2.imread(img)
             imgResize =  cv2.resize(image, (width, height))
             print("Saving Picture of : ", imgResize.shape)
-            cv2.imwrite('resized' + img[folderLen:] , imgRe)
+            cv2.imwrite('resized' + img[folderLen:] , imgResize)
             
-   except Error as err  :
-       return err
-
-
-def main():
-    folder =  input('Enter folder name :   ')
-    width = input(int('Width : '))
-    height = input(int('Height : '))        
-    change_pixel(folder, width, height)
-
-if __name__ == '__main__':
-    main()
-    sys.exit(0)
+except Exception as err:
+     print(err)
