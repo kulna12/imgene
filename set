@@ -1,15 +1,4 @@
 #!/bin/sh
 
-# first check the os
-
-if [[ "$OSTYPE" == "mysys"  ]]; then
-  
-  pip install Pillow && pip install  opencv-python
-  python change_pixel.py
-
-else 
-  
-  pip3 install Pillow && pip3 install  opencv-python
-  python3 change_pixel.py
-
-fi
+pip install Pillow && pip install  opencv-python
+python change_pixel.py
