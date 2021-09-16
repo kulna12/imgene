@@ -1,0 +1,6 @@
+#!/bin/sh
+
+jupyter-notebook
+
+#pip install Pillow && pip install  opencv-python
+#python change_pixel.py
